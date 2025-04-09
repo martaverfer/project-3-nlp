@@ -1,31 +1,81 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
-
-# Natural Language Processing Challenge
+# Real News or Fake News? Predicting Headlines Based on Natural Language Processing
 
 ## Introduction
 
-Learning how to process text is a skill required for Data Scientists. 
-In this project, you will put these skills into practice to identify whether a news headline is real or fake news.
+This project aims to build a classifier using Natural Language Processing (NLP) techniques to predict whether a news headline is real (truthful) or fake (fabricated). The classifier will take in a dataset of news headlines and generate predictions for unseen data.
 
-## Project Overview
+The dataset used contains two types of news headlines:
 
-In the file `dataset/training_data.csv` you will find dataset containing news headlines and their tags: 
-0, if the headline is fake news, and, 1, if the headline is real news. 
+- **Real News (1):** Headlines from credible sources.
 
-Your goal is to build a classifier that is able to distinguish between the two.
+- **Fake News (0):** Fabricated or misleading headlines.
 
-Once you have a classifier built, then use it to predict the labels for `dataset/testing_data.csv`. Generate a new file
-where the label `2` has been replaced by `0` (fake) or `1` (real) according to your model. Please respect the original file format, 
-do not include extra columns, and respect the column separator. 
+The model will use text classification to distinguish between these two types based on their features.
 
+## Objective
 
-## Guidance
-Like in a real life scenario, you are able to make your own choices and text treatment. 
-Use the techniques you have learned and the common packages to process this data and classify the text.
+1. **Build a Text Classifier:** Use machine learning models (Logistic Regression, Naive Bayes, Random Forest, or Deep Learning models) to classify news headlines.
 
-## Deliverables
+2. **Text Preprocessing:**
+    - Tokenize the headlines.
+    - Vectorize the text (using TF-IDF and CountVectorizer).
 
-1. **Python Code:** Provide well-documented Python code that conducts the analysis.
-2. **Predictions:** A csv file in the same format as `testing_data.csv` but with the predicted labels (0 or 1)
-3. **Accuracy estimation:** Provide the teacher with your estimation of how your model will perform.
-4. **Presentation:** You will present your model in a 10-minute presentation. Your teacher will provide further instructions.
+3. **Training:** Train the model on the `training_data.csv` dataset.
+
+4. **Testing:**
+    - Apply the trained model on `testing_data.csv`.
+    - Generate a new column in the 'testing_data.csv' file with the predicted labels (0 for fake, 1 for real).
+
+## Installation
+
+To run this project locally, follow these instructions:
+
+### 1. **Clone this repository:**
+
+```bash
+git clone https://github.com/martaverfer/project-3-nlp.git 
+cd notebooks
+```
+
+### 2. **Virtual environment:**
+
+Create the virtual environment: 
+```bash
+python3 -m venv venv
+```
+
+Activate the virtual environment:
+
+- For Windows: 
+```bash
+venv\Scripts\activate
+```
+
+- For Linux/Mac: 
+```bash
+source venv/bin/activate
+```
+
+To switch back to normal terminal usage or activate another virtual environment to work with another project run:
+```deactivate```
+
+### 3. **Install dependencies:**
+
+```bash
+pip install --upgrade pip; 
+pip install -r requirements.txt
+```
+
+### 4. **Open the Jupyter notebook to explore the analysis:**
+
+```bash
+cd notebooks; 
+main.ipynb
+```
+
+This script will execute the analysis steps.
+
+## Conclusion
+The project applies NLP and machine learning techniques to classify news headlines as real or fake. The model’s goal is to assist in identifying misleading or fabricated information in news sources, which is increasingly important in the age of misinformation.
+
+Good luck, and feel free to reach out if you encounter any issues!
